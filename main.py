@@ -17,7 +17,7 @@ This is the user config section. Please adjust these to your needs.
 # CHANNELS
 REQUEST_CHANNELID = 1188171217241391126
 REQUESTLOG_CHANNELID = 1302012133344542740
-
+BOT_USERID = 1300431457390563328
 
 """
 --- CONFIGURATION SECTION END ---
@@ -47,7 +47,7 @@ class MyClient(discord.Client):
 -# **y!q** - shows the entire level request queue
 -# **y!rlog** - shows level request logs""")
             await message.add_reaction("✅")
-        elif message.content == "<@1300431457390563328>":
+        elif message.content == f"<@{BOT_USERID}>":
             await message.channel.send("Yo mate, if ya need help, use da y!help command. Thanks and bye.")
         elif message.content.startswith("y!useless"):
             await message.channel.send(f"This command is absolutely useless. Why did you use it?\n# AND I TOLD YOU NOT TO USE IT")
