@@ -47,7 +47,7 @@ class MyClient(discord.Client):
 -# **y!q** - shows the entire level request queue
 -# **y!rlog** - shows level request logs""")
             await message.add_reaction("✅")
-        elif message.content == f"<@{BOT_USERID}>":
+        elif message.content == f"<@{str(BOT_USERID)}>":
             await message.channel.send("Yo mate, if ya need help, use da y!help command. Thanks and bye.")
         elif message.content.startswith("y!useless"):
             await message.channel.send(f"This command is absolutely useless. Why did you use it?\n# AND I TOLD YOU NOT TO USE IT")
