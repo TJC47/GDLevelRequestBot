@@ -9,7 +9,6 @@ import asyncio
 from threading import Thread
 import hashlib
 import base64
-import nacl
 """
 --- CONFIGURATION SECTION ---
 This is the user config section. Please adjust these to your needs.
@@ -137,9 +136,6 @@ class MyClient(discord.Client):
             except:
                 await message.channel.send(f"Level request queue:\n-# The queue is empty!")
                 await message.add_reaction("❌")
-        elif message.content.startswith("y!sayhi"):
-            vc = client.get_channel(1300511736218128458)
-            await vc.connect()
         elif "(╯°□°)╯︵ ┻━┻" in message.content:
             await message.channel.send("┬─┬ノ(ಠ_ಠノ)")
         else:
@@ -155,7 +151,7 @@ client = MyClient(intents=intents)
 )
 @app_commands.allowed_installs(guilds=True, users=True)
 async def say(interaction: discord.Interaction, message: str):
-    await interaction.response.send_message(content=f"{message.upper()}")
+    await interaction.response.send_message(content=f"{message}")
 
 @client.tree.command(description="Request a level")
 @app_commands.describe(
